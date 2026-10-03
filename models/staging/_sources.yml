@@ -1,0 +1,7 @@
+sources:
+  - name: nflverse
+    tables:
+      - name: play_by_play
+        config:
+          meta:
+            external_location: "data/raw/play_by_play_*.parquet"
