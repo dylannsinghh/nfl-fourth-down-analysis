@@ -29,3 +29,18 @@ models:
       - name: wpa
         data_tests:
           - not_null
+
+  - name: mart_decision_benchmark
+    columns:
+      - name: decision
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['go', 'punt', 'field_goal']
+      - name: plays
+        data_tests:
+          - not_null
+      - name: avg_wpa
+        data_tests:
+          - not_null
