@@ -1,0 +1,31 @@
+models:
+  - name: fct_fourth_downs
+    columns:
+      - name: play_key
+        data_tests:
+          - unique
+          - not_null
+      - name: coach
+        data_tests:
+          - not_null
+      - name: decision
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['go', 'punt', 'field_goal']
+      - name: distance_bucket
+        data_tests:
+          - not_null
+      - name: field_position_bucket
+        data_tests:
+          - not_null
+      - name: score_bucket
+        data_tests:
+          - not_null
+      - name: time_bucket
+        data_tests:
+          - not_null
+      - name: wpa
+        data_tests:
+          - not_null
