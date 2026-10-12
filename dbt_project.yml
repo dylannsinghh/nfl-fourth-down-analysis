@@ -4,6 +4,9 @@ profile: nfl_fourth_down
 
 model-paths: ["models"]
 
+vars:
+  min_sample_size: 30
+
 models:
   nfl_fourth_down:
     staging:
