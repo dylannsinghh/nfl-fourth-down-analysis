@@ -27,7 +27,7 @@ labeled as (
         case 
             when play_type in ('run', 'pass') then 'go'
             when play_type = 'punt' then 'punt'
-            when play_Type = 'field_goal' then 'field_goal'
+            when play_type = 'field_goal' then 'field_goal'
         end as decision,
 
         case 
@@ -42,7 +42,7 @@ labeled as (
             when yardline_100 between 50 and 69 then 'Own 31-50'
             when yardline_100 between 35 and 49 then 'Opp 35-49'
             when yardline_100 between 20 and 34 then 'Opp 20-34'
-            when yardline_100 between 1 and 19 then 'Opp 1-10'
+            when yardline_100 between 1 and 19 then 'Opp 1-19'
         end as field_position_bucket,
 
         case 
