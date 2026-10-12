@@ -1,0 +1,7 @@
+models:
+  - name: stg_plays
+    columns:
+      - name: play_key
+        data_tests:
+          - unique
+          - not_null

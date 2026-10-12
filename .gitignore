@@ -1,2 +1,6 @@
 data/
 .DS_Store
+.venv/
+target/
+logs/
+.user.yml

@@ -1,0 +1,7 @@
+nfl_fourth_down:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: data/nfl.duckdb
+      threads: 4

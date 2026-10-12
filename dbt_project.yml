@@ -1,0 +1,10 @@
+name: nfl_fourth_down
+version: "1.0.0"
+profile: nfl_fourth_down
+
+model-paths: ["models"]
+
+models:
+  nfl_fourth_down:
+    staging:
+      +materialized: view
