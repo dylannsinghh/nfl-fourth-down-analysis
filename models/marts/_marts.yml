@@ -44,3 +44,25 @@ models:
       - name: avg_wpa
         data_tests:
           - not_null
+          
+  - name: fct_graded_decisions
+    columns:
+      - name: play_key
+        data_tests:
+          - unique
+          - not_null
+      - name: best_decision
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['go', 'punt', 'field_goal']
+
+  - name: mart_coach_seasons
+    columns:
+      - name: coach
+        data_tests:
+          - not_null
+      - name: games
+        data_tests:
+          - not_null
+          
