@@ -4,6 +4,8 @@ Should a team go for it on 4th down? This project grades every regular season 4t
 
 **Live dashboard:** [NFL 4th Down Decision Tool](https://public.tableau.com/app/profile/dylan.singh/viz/NFL4thDownDecisionTool/4thDownDecisions)
 
+*Numbers through Week 5 of the 2026 season.*
+
 ## The question
 If I were advising an NFL front office: is our head coach too conservative on 4th down, and what is it costing us in wins?
 
@@ -29,7 +31,7 @@ A situation combines yards to go (1, 2-3, 4-6, 7+), field position (5 zones), sc
 
 ## Key decisions
 - **Penalties and timeouts are excluded.** When a 4th down play is wiped out by a penalty, the down gets replayed and the real decision shows up in the next row. Counting both would double count.
-- **120 situations, not more.** A finer split made 332 situations, but only 53 had enough data to compare choices fairly.
+- **120 situations, not more.** A finer split made 332 situations, but only 36 had enough data to compare choices, fewer than the 42 in this version.
 - **Minimum sample size.** A choice needs 30+ plays to count, and a situation needs 2+ such choices before a best call is named.
 - **Coaches are ranked per game, not by totals,** so interim coaches and partial seasons compare fairly.
 
@@ -44,23 +46,4 @@ A situation combines yards to go (1, 2-3, 4-6, 7+), field position (5 zones), sc
 - Built from historical averages using nflverse's win probability model, not a model I trained.
 - Assumes an average team. It can't see a team's own strengths (an elite defense makes punting worth more), weather, or injuries.
 - Teams tend to go for it in favorable spots, which flatters the "go" numbers a little.
-- Only 41% of decisions fall in situations that can be graded. Ungraded calls count as zero cost, so wins lost is a conservative estimate.
-- It measures one type of decision, not overall coaching.
-
-## Run it yourself
-Everything is free and runs locally. You need Python 3 and Git.
-```
-git clone https://github.com/dylannsinghh/nfl-fourth-down-analysis.git
-cd nfl-fourth-down-analysis
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-bash scripts/download_data.sh
-dbt build
-```
-This builds the database at `data/nfl.duckdb` and writes the dashboard data to `exports/`.
-
-## Built with
-SQL, dbt, DuckDB, Tableau Public, Git. Data from [nflverse](https://github.com/nflverse/nflverse-data).
-
-Dylan Singh · [LinkedIn](https://www.linkedin.com/in/dylansingh9)
+- Only 41% of decisions fall in situations that can be graded. Ungraded calls count as zero cost, so wins lost is
